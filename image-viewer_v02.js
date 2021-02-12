@@ -347,6 +347,7 @@ let maxTransX;
 let tapCount = 0;
 let tap_timeout;
 let tap_tempPoint;
+let flgMove;
 // scale
 let nowScale = 1;
 ////////////////////////////////////////////////////////////////////////////////
@@ -446,13 +447,22 @@ function fncTouchMove(e){
         imgContainer.style.transform = `translate3d(${cTranslate3d[0]}px, ${cTranslateY}px, 0px)`;
       }
     }else{
-      /*** ズーム中 **/
-      // console.log('ズーム中');
+      /*** ズーム中 ***/
       if(!iTranslate3d) return;
-      targetImg.classList.add('md-dragging');
-      iTranslateX = iTranslate3d[0] + (movePoint.x - startPoint.x) / nowScale;
-      iTranslateY = iTranslate3d[1] + (movePoint.y - startPoint.y) / nowScale;
-      targetImg.style.transform = `scale(${nowScale}) translate3d(${iTranslateX}px, ${iTranslateY}px, 0px)`;
+
+      // ある程度のあそびを作っておく
+      if(!flgMove){
+        if(Math.abs(movePoint.x - startPoint.x) >= 40 && Math.abs(movePoint.y - startPoint.y) >= 40){
+          flgMove = true;
+        }
+      }
+      // 画像をドラッグ
+      if(flgMove){
+        targetImg.classList.add('md-dragging');
+        iTranslateX = iTranslate3d[0] + (movePoint.x - startPoint.x) / nowScale;
+        iTranslateY = iTranslate3d[1] + (movePoint.y - startPoint.y) / nowScale;
+        targetImg.style.transform = `scale(${nowScale}) translate3d(${iTranslateX}px, ${iTranslateY}px, 0px)`;
+      }
     }
   }else{
 
@@ -531,6 +541,7 @@ function fncTouchEnd(e){
   swipeDir = null;
   cTranslate3d = null;
   iTranslate3d = null;
+  flgMove = false;
 }
 ////////////////////////////////////////////////////////////////////////////////
 function fncClick(e){
