@@ -452,7 +452,7 @@ function fncTouchMove(e){
 
       // ある程度のあそびを作っておく
       if(!flgMove){
-        if(Math.abs(movePoint.x - startPoint.x) >= 40 && Math.abs(movePoint.y - startPoint.y) >= 40){
+        if(Math.abs(movePoint.x - startPoint.x) >= 13 && Math.abs(movePoint.y - startPoint.y) >= 13){
           flgMove = true;
         }
       }
