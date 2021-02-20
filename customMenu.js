@@ -4,7 +4,7 @@
   // data-actionと各SVG, フォントの関係
   const icon_svg = {
     'embed': svg_embed
-  }
+  };
   const icon_fonts = {
     'reference-to': 'copylink',
     'message-to': 'message',
