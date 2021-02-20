@@ -25,13 +25,12 @@
   };
 
   // カスタムメニュー用CSS
-  let cmenuStyle;
   if(!document.getElementById('md-style-menu')){
     const style = document.createElement('style');
     style.id = 'md-style-menu';
     style.type = 'text/css';
     style.innerHTML = '.dropdown-menu .caret{display:none}#md-custom-menu{display:block;position:fixed;top:0;left:0;z-index:999;width:100vw;height:100vh;background-color:#0000;transition-property:background-color;transition-duration:.13s}#md-custom-menu.md-cmenu-open{background-color:#00000060}#md-custom-menu.md-cmenu-hide{display:none}#md-custom-menu>.dropdown-menu{display:block!important;position:absolute!important;top:unset!important;bottom:0!important;left:0!important;right:unset!important;margin:0!important;width:100%;border-radius:15px 15px 0 0!important;box-shadow:0 0 7px 0 rgb(0 0 0 / 13%)!important;font-size:14px!important}#md-custom-menu>.dropdown-menu li.is-selectable{position:relative;height:35px}#md-custom-menu>.dropdown-menu li>.md-cmenu-icon,#md-custom-menu>.dropdown-menu li>svg{display:inline-block;position:absolute;top:0;left:20px;width:auto;height:21px;line-height:21px;padding:7px 0;box-sizing:content-box!important;fill:currentcolor}#md-custom-menu>.dropdown-menu li>a{display:inline-block;width:100%;height:100%;line-height:35px;padding:0 25px 0 50px}#md-custom-menu>.dropdown-menu li.is-selectable>a:after{font-size:14px!important}#md-custom-menu .icon:before{font-weight:400}.md-icon-mention:before{content:"\\F064"}.md-icon-copylink:before{content:"\\F098"}.md-icon-message:before{content:"\\F054"}.md-icon-follow:before{content:"\\F175"}.md-icon-favorite:before{content:"\\F148"}.md-icon-addList:before{content:"\\F712"}.md-icon-addCollection{transform:scale(-1,1)}.md-icon-addCollection:before{content:"\\F214"}.md-icon-search:before{content:"\\F058"}.md-icon-mute:before{content:"\\F101"}.md-icon-block:before{content:"\\E609"}.md-icon-report:before{content:"\\F038"}.md-icon-remove:before{content:"\\F154"}';
-    cmenuStyle = document.head.appendChild(style);
+    document.head.appendChild(style);
   }
   // カスタムメニュー用要素
   let cmenuElem;
@@ -47,7 +46,7 @@
 
   // カスタムメニューを開く
   function openCustomMenu(menu){
-    if(cmenuElem && cmenuStyle){
+    if(cmenuElem){
       // 元の要素を移動
       cmenuElem.appendChild(menu);
       // クラス追加・削除
