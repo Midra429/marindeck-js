@@ -91,7 +91,6 @@
       menu.remove();
       // 下に移動
       setTimeout(()=>{
-        console.log(555);
         cloneMenu.style.transform = `translate3d(0px, ${mh}px, 0px)`;
       }, 0);
     }
