@@ -1,0 +1,100 @@
+@charset "UTF-8";
+:focus { outline: none; }
+input {
+  display: block;
+  width: auto;
+  height: 2em;
+  font-size: 1em;
+  margin: 0;
+  padding: 5px;
+  box-sizing: border-box;
+  border: 1px solid #cccccc;
+  border-radius: 7px;
+  transition: 0.13s;
+}
+input:focus {
+  border: 1px solid #4ca8ff;
+}
+label {
+  display: block;
+  height: 1.5em;
+  line-height: 1.5em;
+  margin: 1px 3px;
+}
+.c-hover:hover { filter: brightness(0.96); }
+.c-active:active { filter: brightness(0.94); }
+.c-shadow1 { box-shadow: 0px 1px 4px 0px rgb(0 0 0 / 0.25); }
+.c-shadow1-hover:hover { box-shadow: 1px 2px 5px 1px rgb(0 0 0 / 0.2); }
+.c-shadow1-active:active { box-shadow: 0px 1px 4px 0px rgb(0 0 0 / 0.25); }
+.c-shadow2 { box-shadow: 0px 1px 4px 0px rgb(0 0 0 / 0.2); }
+.c-shadow2-hover:hover { box-shadow: 1px 2px 5px 1px rgb(0 0 0 / 0.15); }
+.c-btn-notActive {
+  filter: grayscale(1) !important;
+}
+.c-btn-notActive,
+.c-btn-notActive:hover,
+.c-btn-notActive:active {
+  box-shadow: 0px 1px 4px 0px rgb(0 0 0 / 0.25) !important;
+  cursor: default;
+}
+.button {
+  width: 90px;
+  height: 30px;
+  line-height: 30px;
+  text-align: center;
+  background-color: #fff;
+  border-radius: 15px;
+  cursor: pointer;
+  transition: 0.18s;
+}
+.btn-t1 {
+  background-color: #ffe266;
+}
+.btn-t2 {
+  background-color: #f1f1f1;
+}
+/******************************************************************************/
+* {
+  margin: 0;
+  padding: 0;
+  font-size: 15px;
+  color: #333;
+}
+*:not(input) {
+  user-select: none;
+}
+.img_container {
+  height: 50vh;
+  margin-top: 25vh;
+}
+.img_container .img_item {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+.input_container {
+  position: fixed;
+  bottom: 13px;
+  left: 13px;
+  width: 45vw;
+  max-width: 450px;
+  min-width: 290px;
+  padding: 15px;
+  background-color: #f1f1f1cc;
+  border-radius: 13px;
+}
+.input_container input, .input_container label {
+  display: block;
+}
+.input_container input {
+  margin-bottom: 10px;
+}
+.input_container input[name="url"] {
+  width: 100%;
+}
+.input_container .button {
+  margin: 15px 0 5px calc((100% - 90px) / 2);
+}
+span {
+  font-size: 0.85em;
+}

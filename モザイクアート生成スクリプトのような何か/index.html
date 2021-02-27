@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8">
+    <title>画像から色を抽出するやつ</title>
+    <link rel="stylesheet" href="style.css">
+  </head>
+
+  <body>
+    <div class="img_container">
+      <img class="img_item" src="">
+    </div>
+    <div class="input_container">
+      <label for="url">画像のURL <span>※Twitter上の画像なら大体ok</span></label>
+      <input type="text" name="url" value="https://pbs.twimg.com/profile_images/1362198309020966913/pn-Pw9kI.jpg">
+      <label for="size">サイズ <span>※3以上1050以下 !important</span></label>
+      <input type="text" name="size" value="90">
+      <label for="mode">モード <span>※dark. light（サイズが3のときのみ）</span></label>
+      <input type="text" name="mode" value="dark" disabled>
+      <span>Consoleに出力されるものは全て比率1:1です。めんどくさいので。</span>
+      <div class="button btn-t1 c-shadow1 c-shadow1-hover c-shadow1-active c-hover c-active" jsaction="conv">変換</div>
+    </div>
+  </body>
+
+  <script type="text/javascript" src="colorextract.js"></script>
+</html>
